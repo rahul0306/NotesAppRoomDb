@@ -34,13 +34,15 @@ class InsertNoteViewModel @Inject constructor(
     val uiEvent = _uiEvent.receiveAsFlow()
 
     init {
-        val noteId = savedStateHandle.get<Int>("noteId")!!
-        if (noteId != -1) {
-            viewModelScope.launch {
-                repository.getNoteById(noteId)?.let { note ->
-                    title = note.title
-                    description = note.description ?: ""
-                    this@InsertNoteViewModel.note = note
+        val noteId = savedStateHandle.get<String>("noteId")
+        if (noteId != null) {
+            if (noteId != "-1" && noteId.isNotEmpty()) {
+                viewModelScope.launch {
+                    repository.getNoteById(noteId)?.let { note ->
+                        title = note.title
+                        description = note.description ?: ""
+                        this@InsertNoteViewModel.note = note
+                    }
                 }
             }
         }
@@ -58,7 +60,7 @@ class InsertNoteViewModel @Inject constructor(
                         Notes(
                             title = title,
                             description = description,
-                            id = note?.id
+                            id = note?.id ?:"0"
                         )
                     )
                     sendUiEvent(UiEvent.PopBackStack)

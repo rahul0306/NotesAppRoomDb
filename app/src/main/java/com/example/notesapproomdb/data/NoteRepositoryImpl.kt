@@ -12,14 +12,14 @@ class NoteRepositoryImpl(
         return dao.getNotes()
     }
 
-    override suspend fun getNoteById(id: Int): Notes? {
+    override suspend fun getNoteById(id: String): Notes? {
         return dao.getNoteById(id)
     }
 
     override suspend fun insertNote(notes: Notes) {
         try {
             val docRef = firestore.collection("notes").document()
-            val noteWithId = notes.copy(id = docRef.id.hashCode())
+            val noteWithId = notes.copy(id = docRef.id)
 
             docRef.set(noteWithId).await()
             dao.insertNote(noteWithId)
@@ -31,10 +31,9 @@ class NoteRepositoryImpl(
 
     override suspend fun deleteNote(notes: Notes) {
         try {
-            if (notes.id != null) {
-                val docId = notes.id.hashCode().toString()
+            if (notes.id.isNotEmpty()) {
                 firestore.collection("notes")
-                    .document(docId)
+                    .document(notes.id)
                     .delete()
                     .await()
             }

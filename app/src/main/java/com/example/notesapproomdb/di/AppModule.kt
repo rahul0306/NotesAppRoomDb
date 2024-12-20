@@ -3,6 +3,7 @@ package com.example.notesapproomdb.di
 import android.app.Application
 import androidx.room.Room
 import com.example.notesapproomdb.data.NoteDatabase
+import com.example.notesapproomdb.data.NoteDatabase.Companion.MIGRATION_1_2
 import com.example.notesapproomdb.data.NoteRepository
 import com.example.notesapproomdb.data.NoteRepositoryImpl
 import com.google.firebase.firestore.FirebaseFirestore
@@ -23,7 +24,7 @@ object AppModule {
             app,
             NoteDatabase::class.java,
             "note_db"
-        ).build()
+        ).addMigrations(MIGRATION_1_2).build()
     }
 
     @Provides

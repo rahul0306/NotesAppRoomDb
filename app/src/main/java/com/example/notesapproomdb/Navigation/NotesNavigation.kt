@@ -28,8 +28,9 @@ fun NotesNavigation() {
                 navArgument(
                     name = "noteId"
                 ){
-                    type = NavType.IntType
-                    defaultValue = -1
+                    type = NavType.StringType
+                    defaultValue = null
+                    nullable=true
                 }
             )
         ){
