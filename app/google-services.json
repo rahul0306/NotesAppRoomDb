@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "273327216930",
+    "project_id": "noteapproomfirebase",
+    "storage_bucket": "noteapproomfirebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273327216930:android:d523d6999856f661efed7b",
+        "android_client_info": {
+          "package_name": "com.example.notesapproomdb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ_bVAh-5_l04XEcS5P_vhSGgpxrR2Ujg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
