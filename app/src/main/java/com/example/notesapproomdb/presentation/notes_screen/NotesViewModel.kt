@@ -1,4 +1,4 @@
-package com.example.notesapproomdb.presentation.insert_note_screen.notes_screen
+package com.example.notesapproomdb.presentation.notes_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -34,7 +34,7 @@ class NotesViewModel @Inject constructor(
             }
 
             is NotesListEvent.onNoteClick -> {
-                sendUiEvent(UiEvent.Navigate(Routes.INSERT_NOTE + "?noteId=${event.notes.id}"))
+                 sendUiEvent(UiEvent.Navigate(Routes.INSERT_NOTE + "?noteId=${event.notes.id}"))
             }
         }
     }

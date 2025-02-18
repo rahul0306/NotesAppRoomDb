@@ -1,4 +1,4 @@
-package com.example.notesapproomdb.presentation.insert_note_screen.notes_screen
+package com.example.notesapproomdb.presentation.notes_screen
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image

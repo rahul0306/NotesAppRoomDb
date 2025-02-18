@@ -7,8 +7,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.notesapproomdb.presentation.insert_note_screen.InsertNoteScreen
-import com.example.notesapproomdb.presentation.insert_note_screen.notes_screen.NotesScreen
-import com.example.notesapproomdb.presentation.insert_note_screen.splash_screen.SplashScreen
+import com.example.notesapproomdb.presentation.notes_screen.NotesScreen
+import com.example.notesapproomdb.presentation.splash_screen.SplashScreen
 import com.example.notesapproomdb.util.Routes
 
 @Composable
